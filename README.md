@@ -3,7 +3,7 @@
 Search many log files as **one timeline**. Any format, real filters, and one flag to follow a single request across all your services.
 
 ```bash
-npx logsift logs/ --request req-2
+npx @ragib.mrb/logsift logs/ --request req-2
 ```
 
 ```
@@ -29,7 +29,7 @@ logsift reads every file you give it, works out each line's format, and merges e
 ## Install
 
 ```bash
-npm install -g logsift     # or just: npx logsift …
+npm install -g @ragib.mrb/logsift   # gives you the `logsift` command; or just: npx @ragib.mrb/logsift …
 ```
 
 Needs Node.js 22 or newer. No dependencies.
@@ -89,7 +89,14 @@ Exit code: `0` when something matched, `1` when nothing did, `2` on errors, like
 ## Use it in code
 
 ```js
-import { readEntries, mergeByTime, buildFilter, expandInputs, labelSources, openStream } from 'logsift';
+import {
+  readEntries,
+  mergeByTime,
+  buildFilter,
+  expandInputs,
+  labelSources,
+  openStream,
+} from '@ragib.mrb/logsift';
 ```
 
 ## Develop
