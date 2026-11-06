@@ -1,0 +1,63 @@
+{
+  "name": "logsift",
+  "version": "0.1.0",
+  "description": "Search many log files as one timeline: any format, filters, and follow one request across services.",
+  "license": "MIT",
+  "author": "Ragib MRB",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ragib-mrb/logsift.git"
+  },
+  "homepage": "https://github.com/ragib-mrb/logsift#readme",
+  "bugs": {
+    "url": "https://github.com/ragib-mrb/logsift/issues"
+  },
+  "type": "module",
+  "bin": {
+    "logsift": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "logs",
+    "log-viewer",
+    "log-search",
+    "grep",
+    "json-logs",
+    "pino",
+    "winston",
+    "bunyan",
+    "cli",
+    "request-tracing"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/node": "26.6.6",
+    "eslint": "10.13.0",
+    "prettier": "3.9.10",
+    "tsup": "9.0.0",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.72.1",
+    "vitest": "5.0.5"
+  }
+}
