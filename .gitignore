@@ -51,6 +51,7 @@ compose.override.yaml
 
 # Logs
 *.log
+!test/fixtures/*.log
 npm-debug.log*
 yarn-error.log*
 

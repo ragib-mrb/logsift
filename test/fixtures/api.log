@@ -1,0 +1,5 @@
+{"level":30,"time":1793884980000,"pid":1,"hostname":"api","reqId":"req-1","msg":"request start","method":"GET","url":"/orders"}
+{"level":30,"time":1793884980120,"pid":1,"hostname":"api","reqId":"req-1","msg":"request done","status":200,"ms":120}
+{"level":30,"time":1793884985000,"pid":1,"hostname":"api","reqId":"req-2","msg":"request start","method":"POST","url":"/orders"}
+{"level":50,"time":1793884986500,"pid":1,"hostname":"api","reqId":"req-2","msg":"payment failed","status":502,"err":{"type":"TimeoutError","message":"upstream timed out"}}
+{"level":40,"time":1793884990000,"pid":1,"hostname":"api","msg":"slow query","ms":2300}

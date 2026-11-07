@@ -1,0 +1,3 @@
+time=2026-11-05T13:23:00.500Z level=info msg="gateway up" port=8080
+time=2026-11-05T13:23:05.100Z level=info msg="proxy" request_id=req-2 path=/orders status=502
+time=2026-11-05T13:23:20.000Z level=error msg="health check failed" service=billing

@@ -1,0 +1,7 @@
+2026-11-05T13:23:01.000Z INFO  worker started
+2026-11-05T13:23:05.500Z DEBUG picked job for request req-2
+2026-11-05T13:23:06.000Z ERROR charge failed for req-2
+Error: card declined
+    at charge (/app/billing.js:42:11)
+    at process (/app/worker.js:10:5)
+2026-11-05T13:23:12.000Z WARN  retry queue is growing
