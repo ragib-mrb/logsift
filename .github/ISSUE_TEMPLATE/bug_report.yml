@@ -1,0 +1,36 @@
+name: Bug report
+description: Something doesn't work as the README says
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you saw, and what you expected instead.
+    validations:
+      required: true
+  - type: input
+    id: command
+    attributes:
+      label: Command you ran
+      placeholder: logsift logs/ --request req-2 --level warn
+    validations:
+      required: true
+  - type: textarea
+    id: lines
+    attributes:
+      label: A few log lines that show the problem
+      description: Remove anything private (tokens, emails, IPs) first.
+      render: text
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      placeholder: logsift 0.1.0, Node 22.12.0
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: OS and terminal
+      placeholder: Windows 11, Windows Terminal

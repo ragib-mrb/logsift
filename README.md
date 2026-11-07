@@ -107,6 +107,8 @@ npm test
 npm run build && node dist/cli.js test/fixtures --request req-2
 ```
 
+Want to help? See [CONTRIBUTING.md](CONTRIBUTING.md). Changes are listed in [CHANGELOG.md](CHANGELOG.md).
+
 ## License
 
 [MIT](LICENSE)
