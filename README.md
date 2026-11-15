@@ -68,6 +68,7 @@ All filters must match.
 | `--json`       | one JSON object per line, for `jq` or another tool                               |
 | `--stats`      | counts by level and file, and the most common messages (numbers and IDs grouped) |
 | `-n, --limit`  | stop after n matching lines                                                      |
+| `--count`      | print only the number of matching lines                                          |
 | `-f, --follow` | keep watching the files and print new matching lines                             |
 | `--no-color`   | plain text (also when `NO_COLOR` is set)                                         |
 
