@@ -72,6 +72,14 @@ describe('logsift command', () => {
     expect((await sift(['.', '-n', '2'])).lines).toHaveLength(2);
   });
 
+  it('prints only the matching-line count and preserves match exit codes', async () => {
+    const matches = await sift(['.', '--count']);
+    expect(matches).toMatchObject({ code: 0, stdout: '13\n', stderr: '' });
+
+    const noMatches = await sift(['.', '--grep', 'no such text', '--count']);
+    expect(noMatches).toMatchObject({ code: 1, stdout: '0\n', stderr: '' });
+  });
+
   it('reads from a pipe', async () => {
     const stdin = Object.assign(Readable.from(['2026-11-05T13:00:00Z WARN from a pipe\n']), { isTTY: false });
     const { lines } = await sift([], { stdin });
