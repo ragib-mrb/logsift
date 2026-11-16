@@ -26,6 +26,7 @@ Output
       --json              one JSON object per line
       --stats             counts by level and file, and the most common messages
   -n, --limit <n>         stop after n matching lines
+      --count             print only the number of matching lines
   -f, --follow            keep watching the files for new lines
       --no-color          plain text (also when NO_COLOR is set)
   -h, --help              show this help
@@ -71,6 +72,7 @@ export async function run(argv: string[], io: RunIO): Promise<number> {
         json: { type: 'boolean' },
         stats: { type: 'boolean' },
         limit: { type: 'string', short: 'n' },
+        count: { type: 'boolean' },
         follow: { type: 'boolean', short: 'f' },
         'no-color': { type: 'boolean' },
         help: { type: 'boolean', short: 'h' },
@@ -123,7 +125,8 @@ export async function run(argv: string[], io: RunIO): Promise<number> {
       if (!filter(entry)) return;
       matched++;
       if (stats) stats.add(entry);
-      else await write(io.stdout, o.json ? formatJson(entry) : formatPretty(entry, { color, sourceWidth }));
+      else if (!o.count)
+        await write(io.stdout, o.json ? formatJson(entry) : formatPretty(entry, { color, sourceWidth }));
     };
 
     const streams = sources.map((s) => readEntries(openStream(s, io.stdin), s.name, { now }));
@@ -145,7 +148,8 @@ export async function run(argv: string[], io: RunIO): Promise<number> {
       });
     }
 
-    if (stats) await write(io.stdout, stats.format(color));
+    if (o.count) await write(io.stdout, String(matched));
+    else if (stats) await write(io.stdout, stats.format(color));
     return matched > 0 ? 0 : 1;
   } catch (err) {
     await write(io.stderr, `logsift: ${(err as Error).message}`);
